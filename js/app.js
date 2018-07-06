@@ -108,9 +108,10 @@ app.post('/', (req, res, next)=> {
         dataBackup.timeline.unshift(newTweetObj);
         const data = dataBackup;
         res.render('index', {data});
+        // Catch an error
       }else {
         err.details = "Input error detected! Input field should not be empty!";
-        err.status = 500;
+        err.status = 400;
         next(err);
         return;
       }
