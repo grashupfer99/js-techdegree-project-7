@@ -41,7 +41,7 @@ const promises = [
   myTwit.get("account/verify_credentials", { skip_status: true}),
   myTwit.get('statuses/user_timeline', {count: 5}), 
   myTwit.get("friends/list", {count: 5}),
-  myTwit.get("direct_messages/events/list", {count: 5})
+  myTwit.get("direct_messages/events/list")
 ];
 
 // Main route
@@ -59,6 +59,11 @@ app.get('/', async (req, res, next) => {
       following: data[2].data.users,
       directMsg: data[3].data.events,
     };
+
+    // if found more than 5, return only 5 recent messages 
+    if (data.directMsg.length > 5){
+      data.directMsg.splice(5);
+    } 
 
     // store all user's data
     dataBackup = data;
