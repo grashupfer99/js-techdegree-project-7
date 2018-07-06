@@ -59,6 +59,7 @@ app.get('/', async (req, res, next) => {
         following: data[2].data.users,
         directMsg: data[3].data.events,
       };
+      console.log(data.timeline.length);
       
       // create timestamps on a user's timeline
       data.timeline.map( created_at => {
