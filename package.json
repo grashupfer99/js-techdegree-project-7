@@ -1,0 +1,17 @@
+{
+  "name": "twitter-interface",
+  "version": "1.0.0",
+  "description": "Render twitter profile information",
+  "main": "./js/app.js",
+  "scripts": {
+    "start": "node ./js/app.js"
+  },
+  "author": "Alex Khant",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "pug": "^2.0.3",
+    "twit": "^2.2.11"
+  }
+}

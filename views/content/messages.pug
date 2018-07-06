@@ -1,0 +1,21 @@
+.app--section
+    ul.app--message--list
+        li
+            h3 Direct Message History
+            ul.app--message--conversation
+                if data.directMsg.length > 0
+                    each user in data.directMsg
+                        if user.message_create.my_id !== user.message_create.sender_id                        
+                            li.app--message
+                                .app--avatar(style=`background-image: url(${user.profile_img_url})`)
+                                    img(src=`${user.profile_img_url}`)
+                                p.app--message--text= user.message_create.message_data.text
+                                p.app--message--timestamp= user.formatted_timestamp
+                        else 
+                            li.app--message--me
+                                    .app--avatar(style=`background-image: url(${user.profile_img_url})`)
+                                        img(src=`${user.profile_img_url}`)
+                                    p.app--message--text= user.message_create.message_data.text
+                                    p.app--message--timestamp= user.formatted_timestamp                      
+                else 
+                    h2 No messages found... 
