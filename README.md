@@ -19,21 +19,21 @@ module.exports = {
 **Run Dev Server:**
 ```
 npm start
-
+```
 if you have nodemon installed, run
-
+```
 nodemon
-
+```
 or
-
+```
 node js/app.js
 ```
 
 **To view in your browser:**
 ```
 127.0.0.1:3000/
-
+```
 or
-
+```
 localhost:3000/
 ```
