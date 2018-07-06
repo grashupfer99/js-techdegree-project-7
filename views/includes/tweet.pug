@@ -1,10 +1,10 @@
 .app--tweet
-  form
+  form(action='/', method='post')
     .circle--fluid
       .circle--fluid--cell.circle--fluid--primary.align-bottom.app--tweet--post
         .app--avatar(style=`background-image: url(${data.user.profile_image_url})`)
           img(src=`${data.user.profile_image_url}`)
-        textarea#tweet-textarea.circle--textarea--input(placeholder="What's happening?")
+        textarea#tweet-textarea.circle--textarea--input(name='newTweet', placeholder="What's happening?")
         strong#tweet-char.app--tweet--char 140
       .circle--fluid--cell.align-bottom
-        button.button-primary Tweet
+        button.button-primary#newTweet Tweet
