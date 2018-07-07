@@ -99,7 +99,7 @@ app.get('/', async (req, res, next) => {
   }
 });
 
-// Post a new tweet withouth having to refresh a new page
+// Post a new tweet
 app.post('/', (req, res, next)=> {
 
   // post a new tweet with Twitter API Client
